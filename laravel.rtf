@@ -1,0 +1,825 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\froman\fcharset0 TimesNewRomanPSMT;\f2\fswiss\fcharset0 Arial-BoldItalicMT;
+}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab708
+\pard\pardeftab708\ri-952\partightenfactor0
+
+\f0\fs20 \cf0 \
+Fichier app/User.php\'a0:
+\f1\fs24 \
+
+\f0\fs20 \
+/**
+\f1\fs24 \
+
+\f0\fs20  * The attributes that are mass assignable.
+\f1\fs24 \
+
+\f0\fs20  *
+\f1\fs24 \
+
+\f0\fs20  * @var array
+\f1\fs24 \
+
+\f0\fs20  */
+\f1\fs24 \
+
+\f0\fs20 protected $fillable = [
+\f1\fs24 \
+
+\f0\fs20     'name', 'email', 'password', 'last_name'
+\f1\fs24 \
+
+\f0\fs20 ];
+\f1\fs24 \
+
+\f0\fs20 \
+\
+\
+/**
+\f1\fs24 \
+
+\f0\fs20  * Run the migrations.
+\f1\fs24 \
+
+\f0\fs20  *
+\f1\fs24 \
+
+\f0\fs20  * @return void
+\f1\fs24 \
+
+\f0\fs20  */
+\f1\fs24 \
+
+\f0\fs20 public function up()
+\f1\fs24 \
+
+\f0\fs20 \{
+\f1\fs24 \
+
+\f0\fs20     Schema::table('users', function (Blueprint $table) \{
+\f1\fs24 \
+
+\f0\fs20         $table->string('last_name');
+\f1\fs24 \
+
+\f0\fs20     \});
+\f1\fs24 \
+
+\f0\fs20 \}
+\f1\fs24 \
+
+\f0\fs20 /**
+\f1\fs24 \
+
+\f0\fs20  * Reverse the migrations.
+\f1\fs24 \
+
+\f0\fs20  *
+\f1\fs24 \
+
+\f0\fs20  * @return void
+\f1\fs24 \
+
+\f0\fs20  */
+\f1\fs24 \
+
+\f0\fs20 public function down()
+\f1\fs24 \
+
+\f0\fs20 \{
+\f1\fs24 \
+
+\f0\fs20     Schema::table('users', function (Blueprint $table) \{
+\f1\fs24 \
+
+\f0\fs20         $table->dropColumn('last_name');
+\f1\fs24 \
+
+\f0\fs20     \});
+\f1\fs24 \
+
+\f0\fs20 \}
+\f1\fs24 \
+
+\f0\fs20 \
+\
+Fichier /app/Http/Controllers/Auth/RegisterController.php
+\f1\fs24 \
+
+\f0\fs20 \
+/**
+\f1 \
+
+\f0  * Get a validator for an incoming registration request.
+\f1 \
+
+\f0  *
+\f1 \
+
+\f0  * @param  array  $data
+\f1 \
+
+\f0  * @return \\Illuminate\\Contracts\\Validation\\Validator
+\f1 \
+
+\f0  */
+\f1 \
+
+\f0 protected function validator(array $data)
+\f1 \
+
+\f0 \{
+\f1 \
+
+\f0     return Validator::make($data, [
+\f1 \
+
+\f0         'name' => ['required', 'string', 'max:255'],
+\f1 \
+
+\f0         'last_name' => ['required', 'string', 'max:255'],
+\f1 \
+
+\f0         'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+\f1 \
+
+\f0         'password' => ['required', 'string', 'min:8', 'confirmed'],
+\f1 \
+
+\f0     ]);
+\f1 \
+
+\f0 \}
+\f1 \
+
+\f0 /**
+\f1 \
+
+\f0  * Create a new user instance after a valid registration.
+\f1 \
+
+\f0  *
+\f1 \
+
+\f0  * @param  array  $data
+\f1 \
+
+\f0  * @return \\App\\User
+\f1 \
+
+\f0  */
+\f1 \
+
+\f0 protected function create(array $data)
+\f1 \
+
+\f0 \{
+\f1 \
+
+\f0     return User::create([
+\f1 \
+
+\f0         'name' => $data['name'],
+\f1 \
+
+\f0         'last_name' => $data['last_name'],
+\f1 \
+
+\f0         'email' => $data['email'],
+\f1 \
+
+\f0         'password' => Hash::make($data['password']),
+\f1 \
+
+\f0     ]);
+\f1 \
+
+\f0 \}
+\f1 \
+
+\f0 \
+\
+\
+<div class="form-group row">
+\f1\fs24 \
+
+\f0\fs20     <label for="name" class="col-md-4 col-form-label text-md-right">\{\{ __('Last name') \}\}</label>
+\f1\fs24 \
+
+\f0\fs20     <div class="col-md-6">
+\f1\fs24 \
+
+\f0\fs20         <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="\{\{ old('last_name') \}\}" required autocomplete="last_name" autofocus>
+\f1\fs24 \
+
+\f0\fs20         @error('last_name')
+\f1\fs24 \
+
+\f0\fs20             <span class="invalid-feedback" role="alert">
+\f1\fs24 \
+
+\f0\fs20                 <strong>\{\{ $message \}\}</strong>
+\f1\fs24 \
+
+\f0\fs20             </span>
+\f1\fs24 \
+
+\f0\fs20         @enderror
+\f1\fs24 \
+
+\f0\fs20     </div>
+\f1\fs24 \
+
+\f0\fs20 </div>
+\f1\fs24 \
+
+\f0\fs20 \
+\
+class AddUuidToUsersTable extends Migration
+\f1 \
+
+\f0 \{
+\f1 \
+
+\f0     /**
+\f1 \
+
+\f0      * Run the migrations.
+\f1 \
+
+\f0      *
+\f1 \
+
+\f0      * @return void
+\f1 \
+
+\f0      */
+\f1 \
+
+\f0     public function up()
+\f1 \
+
+\f0     \{
+\f1 \
+
+\f0         Schema::table('users', function (Blueprint $table) \{
+\f1 \
+
+\f0             $table->uuid('uuid');
+\f1 \
+
+\f0         \});
+\f1 \
+
+\f0     \}
+\f1 \
+
+\f0     /**
+\f1 \
+
+\f0      * Reverse the migrations.
+\f1 \
+
+\f0      *
+\f1 \
+
+\f0      * @return void
+\f1 \
+
+\f0      */
+\f1 \
+
+\f0     public function down()
+\f1 \
+
+\f0     \{
+\f1 \
+
+\f0         Schema::table('users', function (Blueprint $table) \{
+\f1 \
+
+\f0             $table->dropColumn('uuid');
+\f1 \
+
+\f0         \});
+\f1 \
+
+\f0     \}
+\f1 \
+
+\f0 \}
+\f1 \
+
+\f0 \
+\uc0\u8232 \
+\pard\pardeftab708\ri-952\partightenfactor0
+
+\fs24 \cf0 <?php
+\f1 \
+\pard\pardeftab708\ri-952\partightenfactor0
+
+\f0\fs20 \cf0 \
+namespace App;
+\f1 \
+
+\f0 \
+use Illuminate\\Notifications\\Notifiable;
+\f1 \
+
+\f0 use Illuminate\\Contracts\\Auth\\MustVerifyEmail;
+\f1 \
+
+\f0 use Illuminate\\Foundation\\Auth\\User as Authenticatable;
+\f1 \
+
+\f0 use Emadadly\\LaravelUuid\\Uuids;
+\f1 \
+
+\f0 \
+class User extends Authenticatable
+\f1 \
+
+\f0 \{
+\f1 \
+
+\f0     use Notifiable;
+\f1 \
+
+\f0     use Uuids;
+\f1 \
+
+\f0     /**
+\f1 \
+
+\f0      * The attributes that are mass assignable.
+\f1 \
+
+\f0      *
+\f1 \
+
+\f0      * @var array
+\f1 \
+
+\f0      */
+\f1 \
+
+\f0     protected $fillable = [
+\f1 \
+
+\f0         'name', 'email', 'password', 'last_name',
+\f1 \
+
+\f0     ];
+\f1 \
+
+\f0     /**
+\f1 \
+
+\f0      * The attributes that should be hidden for arrays.
+\f1 \
+
+\f0      *
+\f1 \
+
+\f0      * @var array
+\f1 \
+
+\f0      */
+\f1 \
+
+\f0     protected $hidden = [
+\f1 \
+
+\f0         'password', 'remember_token', 'uuid',
+\f1 \
+
+\f0     ];
+\f1 \
+
+\f0     /**
+\f1 \
+
+\f0      * The attributes that should be cast to native types.
+\f1 \
+
+\f0      *
+\f1 \
+
+\f0      * @var array
+\f1 \
+
+\f0      */
+\f1 \
+
+\f0     protected $casts = [
+\f1 \
+
+\f0         'email_verified_at' => 'datetime',
+\f1 \
+
+\f0     ];
+\f1 \
+
+\f0 \}
+\f1 \
+
+\f0 \
+\
+@extends('layouts.app')
+\f1 \
+
+\f0 @section('content')
+\f1 \
+
+\f0 <div class="container">
+\f1 \
+
+\f0     <div class="row justify-content-center">
+\f1 \
+
+\f0         <div class="col-md-8">
+\f1 \
+
+\f0             <div class="card">
+\f1 \
+
+\f0                 <div class="card-header">Dashboard</div>
+\f1 \
+
+\f0                 <div class="card-body">
+\f1 \
+
+\f0                     @if (session('status'))
+\f1 \
+
+\f0                         <div class="alert alert-success" role="alert">
+\f1 \
+
+\f0                             \{\{ session('status') \}\}
+\f1 \
+
+\f0                         </div>
+\f1 \
+
+\f0                     @endif
+\f1 \
+
+\f0                     You are logged in as: \{\{ Auth::user()->name \}\}
+\f1 \
+
+\f0                 </div>
+\f1 \
+
+\f0                 <h2>Users list</h2>
+\f1 \
+
+\f0                 <ul>
+\f1 \
+
+\f0                     @foreach ($users as $user)
+\f1 \
+
+\f0                         <li> <a href="\{\{route('users_show', ['uuid' => $user->uuid])\}\}">[\{\{$user->uuid\}\}] \{\{$user->name\}\}</a> </li>
+\f1 \
+
+\f0                     @endforeach
+\f1 \
+
+\f0                 </ul>
+\f1 \
+
+\f0             </div>
+\f1 \
+
+\f0         </div>
+\f1 \
+
+\f0     </div>
+\f1 \
+
+\f0 </div>
+\f1 \
+
+\f0 @endsection
+\f1 \
+
+\f0 laravel/resources/views/users_show.blade.php
+\f1 \
+
+\f0 @extends('layouts.app')
+\f1 \
+
+\f0 @section('content')
+\f1 \
+
+\f0 <div class="container">
+\f1 \
+
+\f0     <div class="row justify-content-center">
+\f1 \
+
+\f0         <div class="col-md-8">
+\f1 \
+
+\f0             <div class="card">
+\f1 \
+
+\f0                 <div class="card-header">Dashboard</div>
+\f1 \
+
+\f0                 <div class="card-body">
+\f1 \
+
+\f0                     @if (session('status'))
+\f1 \
+
+\f0                         <div class="alert alert-success" role="alert">
+\f1 \
+
+\f0                             \{\{ session('status') \}\}
+\f1 \
+
+\f0                         </div>
+\f1 \
+
+\f0                     @endif
+\f1 \
+
+\f0                     You are logged in as: \{\{ Auth::user()->name \}\}
+\f1 \
+
+\f0                 </div>
+\f1 \
+
+\f0                 <h2>Users show</h2>
+\f1 \
+
+\f0                 \{\{ $user_details->name \}\} - \{\{ $user_details->last_name \}\} - \{\{ $user_details->email \}\}
+\f1 \
+
+\f0             </div>
+\f1 \
+
+\f0         </div>
+\f1 \
+
+\f0     </div>
+\f1 \
+
+\f0 </div>
+\f1 \
+
+\f0 @endsection
+\f1 \
+
+\f0 \
+\
+\
+/**
+\f1 \
+
+\f0  * Display a listing of the resource.
+\f1 \
+
+\f0  *
+\f1 \
+
+\f0  * @return \\Illuminate\\Http\\Response
+\f1 \
+
+\f0  */
+\f1 \
+
+\f0 public function index()
+\f1 \
+
+\f0 \{
+\f1 \
+
+\f0     $users = User::all();
+\f1 \
+
+\f0 \
+    return view('users_index', ['users' => $users]);
+\f1 \
+
+\f0 \}
+\f1 \
+
+\f0 \
+/**\uc0\u8232  * Display the specified resource.\u8232  * @param string $uuid\u8232  *\u8232  * @return \\Illuminate\\Http\\Response\u8232  */
+\f1 \
+
+\f0 public function show($uuid)
+\f1 \
+
+\f0 \{
+\f1 \
+
+\f0       // $user = User::where('uuid', $uuid)\uc0\u8594 first();
+\f1 \
+
+\f0 	// les deux fonctionnent, ci dessous on utilise la m\'e9thode mise \'e0 	
+\f1 \
+
+\f0 	// disposition par le package UUID
+\f1 \
+
+\f0 	$user = User::uuid($uuid);
+\f1 \
+
+\f0     return view('users_show', ['user_details' => $user]);
+\f1 \
+
+\f0 \}
+\f1 \
+
+\f0 \
+\
+\
+<?php
+\f1\fs24 \
+
+\f0\fs20 \
+namespace App\\Http\\Controllers;
+\f1\fs24 \
+
+\f0\fs20 \
+class EuropePmcController extends Controller
+\f1\fs24 \
+
+\f0\fs20 \{
+\f1\fs24 \
+
+\f0\fs20    public function showMethodsAvailable()
+\f1\fs24 \
+
+\f0\fs20     \{
+\f1\fs24 \
+
+\f0\fs20         $client = new \\SoapClient('https://www.ebi.ac.uk/europepmc/webservices/soap?wsdl', ['trace' => 1]);
+\f1\fs24 \
+
+\f0\fs20         $methods = $client->__getFunctions();
+\f1\fs24 \
+
+\f0\fs20         return view('europepmc_methods', ['methods' => $methods]);
+\f1\fs24 \
+
+\f0\fs20     \}
+\f1\fs24 \
+
+\f0\fs20 \
+    public function searchPublications()
+\f1\fs24 \
+
+\f0\fs20     \{
+\f1\fs24 \
+
+\f0\fs20         $client = new \\SoapClient('https://www.ebi.ac.uk/europepmc/webservices/soap?wsdl', ['trace' => 1]);
+\f1\fs24 \
+
+\f0\fs20         $response = $client->searchPublications([
+\f1\fs24 \
+
+\f0\fs20             'queryString' => 'acouph\'e8ne',
+\f1\fs24 \
+
+\f0\fs20             'cursorMark' => '*'
+\f1\fs24 \
+
+\f0\fs20         ]);
+\f1\fs24 \
+
+\f0\fs20         return view('europepmc_search_publication', ['response' => $response]);
+\f1\fs24 \
+
+\f0\fs20     \}
+\f1\fs24 \
+
+\f0\fs20 \}
+\f1\fs24 \
+
+\f0\fs20 \
+\pard\pardeftab708\ri-952\partightenfactor0
+
+\f2\i\b \cf0 \
+\
+\pard\pardeftab708\ri-952\partightenfactor0
+
+\f0\i0\b0 \cf0 \
+<!DOCTYPE html>
+\f1\fs24 \
+
+\f0\fs20 <html lang="\{\{ str_replace('_', '-', app()->getLocale()) \}\}">
+\f1\fs24 \
+
+\f0\fs20     <head>
+\f1\fs24 \
+
+\f0\fs20         <meta charset="utf-8">
+\f1\fs24 \
+
+\f0\fs20         <title>Available methods for Europe PMC API</title>
+\f1\fs24 \
+
+\f0\fs20     </head>
+\f1\fs24 \
+
+\f0\fs20     <body>
+\f1\fs24 \
+
+\f0\fs20         <h1>Avalaible methods for Europe PMC API</h1>
+\f1\fs24 \
+
+\f0\fs20         <div class="row">
+\f1\fs24 \
+
+\f0\fs20             <ul>
+\f1\fs24 \
+
+\f0\fs20                 @foreach ($methods as $method)
+\f1\fs24 \
+
+\f0\fs20                     <li>\{\{ $method \}\}</li>
+\f1\fs24 \
+
+\f0\fs20                 @endforeach
+\f1\fs24 \
+
+\f0\fs20             </ul>
+\f1\fs24 \
+
+\f0\fs20         </div>
+\f1\fs24 \
+
+\f0\fs20     </body>
+\f1\fs24 \
+
+\f0\fs20 </html>
+\f1\fs24 \
+
+\f0\fs20 \
+\
+\
+\
+<!DOCTYPE html>
+\f1\fs24 \
+
+\f0\fs20 <html lang="\{\{ str_replace('_', '-', app()->getLocale()) \}\}">
+\f1\fs24 \
+
+\f0\fs20     <head>
+\f1\fs24 \
+
+\f0\fs20         <meta charset="utf-8">
+\f1\fs24 \
+
+\f0\fs20         <title>Europe PMC API Search</title>
+\f1\fs24 \
+
+\f0\fs20     </head>
+\f1\fs24 \
+
+\f0\fs20     <body>
+\f1\fs24 \
+
+\f0\fs20         <h1>"Accouph\'e8nes" on Europe PMC API</h1>
+\f1\fs24 \
+
+\f0\fs20         <div class="row">
+\f1\fs24 \
+
+\f0\fs20             <ul>
+\f1\fs24 \
+
+\f0\fs20                 @foreach ($response->return->resultList->result as $result)
+\f1\fs24 \
+
+\f0\fs20                     <li>[\{\{ $result-> id \}\}] - \{\{ $result->title \}\} - \{\{ $result->authorString \}\}</li>
+\f1\fs24 \
+
+\f0\fs20                 @endforeach
+\f1\fs24 \
+
+\f0\fs20             </ul>
+\f1\fs24 \
+
+\f0\fs20         </div>
+\f1\fs24 \
+
+\f0\fs20     </body>
+\f1\fs24 \
+
+\f0\fs20 </html>
+\f1\fs24 \
+
+\f0\fs20 \
+\pard\pardeftab708\ri-952\partightenfactor0
+
+\f1\fs24 \cf0 \
+}

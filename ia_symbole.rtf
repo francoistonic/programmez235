@@ -1,0 +1,170 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fnil\fcharset0 Consolas;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 Calibri;
+}
+{\colortbl;\red255\green255\blue255;\red35\green40\blue45;\red51\green51\blue51;}
+{\*\expandedcolortbl;;\csgenericrgb\c13725\c15686\c17647;\csgenericrgb\c20000\c20000\c20000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab708
+\pard\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\pardeftab708\ri-52\sa384\partightenfactor0
+
+\f0\fs20 \cf2 // on recherche le rectangle contenant le symbole\
+double? left = null, right = null, top = null, bottom = null;\
+\
+foreach (var path in paths)\
+\{\
+    foreach (var point in path)\
+    \{\
+        if (left == null)\
+        \{\
+            left = point.X;\
+            right = point.X;\
+            top = point.Y;\
+            bottom = point.Y;\
+        \}\
+\
+        if (point.X < left.Value)\
+        \{\
+            left = point.X;\
+        \}\
+        else if (point.X > right.Value)\
+        \{\
+            right = point.X;\
+        \}\
+\
+        if (point.Y < top.Value)\
+        \{\
+            top = point.Y;\
+        \}\
+        else if (point.Y > bottom.Value)\
+        \{\
+            bottom = point.Y;\
+        \}\
+    \}\
+\}\
+\
+Rect boundSymbol = new Rect(left.Value, top.Value, right.Value - left.Value, bottom.Value - top.Value);
+\fs21 \
+\pard\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\pardeftab708\ri-52\sa384\partightenfactor0
+
+\f1\fs24 \cf3 \
+\pard\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\pardeftab708\ri-52\sa384\partightenfactor0
+
+\f0\fs20 \cf2 double marginHorizontal = (boundSize - boundSymbol.Width) / 2;\
+double marginVertical = (boundSize - boundSymbol.Height) / 2;\
+\
+foreach (var path in paths)\
+\{\
+	...\
+	foreach (var point in path)\
+	\{\
+		...\
+		var x = point.X + marginHorizontal;\
+		var y = point.Y + marginVertical;\
+		...\
+	\}\
+\}
+\fs21 \
+
+\fs20 \
+foreach (var path in paths)\
+\{\
+    var normalizedPath = new List<Point>();\
+    // tous les traits normalis\'e9es se trouvent ici\
+    normalizedPaths.Add(normalizedPath);\
+\
+    foreach (var point in path)\
+    \{\
+        var normalizedPoint = new Point();\
+\
+        var x = point.X + marginHorizontal;\
+        var y = point.Y + marginVertical;\
+\
+	// les points x,y sont maintenant compris entre 0 et 1\
+        normalizedPoint.X = ((x - boundSymbol.Left) / boundSize);\
+        normalizedPoint.Y = ((y - boundSymbol.Top) / boundSize);\
+\
+        normalizedPath.Add(normalizedPoint);\
+    \}\
+\}
+\fs21 \
+
+\fs20 \
+using System;\
+using System.Collections.Generic;\
+using System.Threading.Tasks;\
+using Windows.AI.MachineLearning;\
+using Windows.Media;\
+using Windows.Storage;\
+\
+namespace Synergiz.AI.Callygraphy.Tools\
+\{\
+    public sealed class OnnxModelInput\
+    \{\
+        public VideoFrame Data \{ get; set; \}\
+    \}\
+\
+    public sealed class ModelOutput\
+    \{\
+        public TensorString ClassLabel = TensorString.Create(new long[] \{ 1, 1 \});\
+        public IList<IDictionary<string, float>> Loss = new List<IDictionary<string, float>>();\
+    \}\
+\
+    public sealed class OnnxModel\
+    \{\
+        private LearningModel _learningModel = null;\
+        private LearningModelSession _session;\
+\
+        public static async Task<OnnxModel> CreateOnnxModel(StorageFile file)\
+        \{\
+            LearningModel learningModel = null;\
+\
+            try\
+            \{\
+                learningModel = await LearningModel.LoadFromStorageFileAsync(file);\
+            \}\
+            catch (Exception e)\
+            \{\
+                var exceptionStr = e.ToString();\
+                System.Console.WriteLine(exceptionStr);\
+                throw e;\
+            \}\
+            return new OnnxModel()\
+            \{\
+                _learningModel = learningModel,\
+                _session = new LearningModelSession(learningModel)\
+            \};\
+        \}\
+\
+        public async Task<ModelOutput> EvaluateAsync(OnnxModelInput input)\
+        \{\
+            var output = new ModelOutput();\
+            var binding = new LearningModelBinding(_session);\
+            binding.Bind("data", input.Data);\
+            binding.Bind("classLabel", output.ClassLabel);\
+            binding.Bind("loss", output.Loss);\
+            LearningModelEvaluationResult evalResult = await _session.EvaluateAsync(binding, "0");\
+\
+            return output;\
+        \}\
+    \}\
+\}
+\fs21 \
+\pard\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\pardeftab708\ri-52\sa384\partightenfactor0
+
+\f1\fs24 \cf3 \
+\pard\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\pardeftab708\ri-52\sa384\partightenfactor0
+
+\f0\fs20 \cf2 var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/Callygraphy-14.onnx"));\
+var predictionModel = await OnnxModel.CreateOnnxModel(file);\
+// frame est de type VideoFrame c'est \'e0 dire un objet en provenance d'une vid\'e9o ou d'une //cam\'e9ra. Une image est facilement transformable en VideoFrame via //VideoFrame.CreateWithSoftwareBitmap(bitmap)\
+var output = await predictionModel.EvaluateAsync(new OnnxModelInput() \{ Data = frame \});\
+// traitement du r\'e9sultat\
+var vector = output.ClassLabel.GetAsVectorView();\
+var tagName = vector[0];\
+var probability = output.Loss[0][product];\
+Debug.WriteLine("Product=" + tagName + " Loss=" + probability);
+\fs21 \
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+
+\f2\fs22 \cf0 \
+}

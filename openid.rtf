@@ -1,0 +1,634 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fnil\fcharset0 Calibri;\f1\fnil\fcharset0 Calibri-Bold;\f2\froman\fcharset0 TimesNewRomanPSMT;
+}
+{\colortbl;\red255\green255\blue255;\red42\green42\blue42;\red47\green84\blue150;\red31\green55\blue99;
+}
+{\*\expandedcolortbl;;\csgenericrgb\c16471\c16471\c16471;\csgenericrgb\c18431\c32941\c58824;\csgenericrgb\c12157\c21569\c38824;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab708
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+
+\f0\fs22 \cf0 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth8923\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8383\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\
+4\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 public abstract class DbContext : \
+\'a0\'a0IdentityDbContext<User, Role, long>\
+\{\
+\}\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 \
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth8923\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8383\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\
+4\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 services.AddDbContext<DbContext>(options =>\
+\{\
+\'a0\'a0\'a0\'a0options.UseOpenIddict<long>();\
+\});\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 \
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth8923\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8383\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 services.AddIdentity<User, Role>()\
+\'a0\'a0\'a0\'a0.AddEntityFrameworkStores<DbContext>()\
+\'a0\'a0\'a0\'a0.AddDefaultTokenProviders();\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 \
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth8923\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8383\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\
+4\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 services.AddAuthentication(options =>\
+\{\
+\'a0\'a0\'a0\'a0options.DefaultScheme = OAuthValidationDefaults.AuthenticationScheme;\
+\}).AddOAuthValidation();\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 \
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth9064\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8392\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\
+4\
+5\
+6\
+7\
+8\
+9\
+10\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 services.Configure<IdentityOptions>(options =>\
+\{\
+\'a0\'a0\'a0\'a0// Password settings\
+\'a0\'a0\'a0\'a0options.Password.RequireDigit = false;\
+\'a0\'a0\'a0\'a0\'a0....\
+\'a0\
+\'a0\'a0\'a0\'a0options.ClaimsIdentity.UserNameClaimType = OpenIdConnectConstants.Claims.Name;\
+\'a0\'a0\'a0\'a0options.ClaimsIdentity.UserIdClaimType = OpenIdConnectConstants.Claims.Subject;\
+\'a0\'a0\'a0\'a0options.ClaimsIdentity.RoleClaimType = OpenIdConnectConstants.Claims.Role;\
+\});\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth9064\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8392\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\
+4\
+5\
+6\
+7\
+8\
+9\
+10\
+11\
+12\
+13\
+14\
+15\
+16\
+17\
+18\
+19\
+20\
+21\
+22\
+23\
+24\
+25\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 services.AddOpenIddict()\
+\'a0.AddCore(options =>\
+\'a0\{\
+\'a0\'a0options.UseEntityFrameworkCore()\
+\'a0\'a0\'a0.UseDbContext<TDbContext>()\
+\'a0\'a0\'a0.ReplaceDefaultEntities<long>();\
+\'a0\})\
+\'a0.AddServer(options =>\
+\'a0\{\
+\'a0\'a0// n\'e9cessaire pour enregistrer les types OpenIddict\
+\'a0\'a0options.UseMvc();\
+\'a0\
+\'a0\'a0// les scopes d\'e9finis\
+\'a0\'a0options.RegisterScopes(\
+\'a0\'a0\'a0OpenIdConnectConstants.Scopes.OpenId,\
+\'a0\'a0\'a0OpenIdConnectConstants.Scopes.OfflineAccess);\
+\'a0\
+\'a0\'a0// le endpoint de connexion\
+\'a0\'a0options.EnableTokenEndpoint("/connect/token");\
+\'a0\
+\'a0\'a0// permettre de se connecter en ressource owned grant..\
+\'a0\'a0options.AllowPasswordFlow();\
+\'a0\
+\'a0\'a0// options.AcceptAnonymousClients();\
+\'a0\});\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 \
+\
+\
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth9064\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8524\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\
+4\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 [Authorize(\
+\'a0AuthenticationSchemes = OAuthValidationDefaults.AuthenticationScheme, \
+\'a0Roles = "ADMIN")]\
+public ActionResult ActionWithAdminAuthorize()\{\}\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+
+\fs26 \cf3 \
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+
+\fs22 \cf0 \
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth9064\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8524\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 OpenIddictConstants.Permissions.GrantTypes.ClientCredentials\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth9064\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8524\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\
+4\
+5\
+6\
+7\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 public async Task<IActionResult> \
+\'a0\'a0ExchangeAsync([FromBody] OpenIdConnectRequest request)\
+\{\
+\'a0\'a0if (!request.IsClientCredentialsGrantType())\{\
+\'a0\'a0\'a0\'a0return;\
+\'a0\'a0\}\
+\}\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 \
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth9064\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8392\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\
+4\
+5\
+6\
+7\
+8\
+9\
+10\
+11\
+12\
+13\
+14\
+15\
+16\
+17\
+18\
+19\
+20\
+21\
+22\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 // on cr\'e9\'e9 une identit\'e9 connect\'e9 via OpenId Connect.\
+var identity = \
+\'a0\'a0new ClaimsIdentity(OpenIdConnectServerDefaults.AuthenticationScheme);\
+var claimsPrincipal = new ClaimsPrincipal(identity);\
+\'a0\
+// On ajoute le claim subject obligatoire\
+identity.AddClaim(\
+\'a0\
+\'a0\'a0new Claim(OpenIdConnectConstants.Claims.Subject, request.ClientId));\
+\'a0\
+// Creation du ticket d'authentification\
+var ticket = new AuthenticationTicket(\
+\'a0\'a0\'a0\'a0claimsPrincipal,\
+\'a0\'a0\'a0\'a0new AuthenticationProperties(),\
+\'a0\'a0\'a0\'a0OpenIdConnectServerDefaults.AuthenticationScheme);\
+\'a0\
+// Application des scopes\
+ticket.SetScopes(request.GetScopes()));\
+return SignIn(\
+\'a0\'a0ticket.Principal, \
+\'a0\'a0ticket.Properties, \
+\'a0\'a0ticket.AuthenticationScheme);\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 \
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth8923\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8251\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\
+4\
+5\
+6\
+7\
+8\
+9\
+10\
+11\
+12\
+13\
+14\
+15\
+16\
+17\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 internal static async Task Main(string[] args)\
+\{\
+\'a0\'a0\'a0\'a0var config = new ConfigurationBuilder()\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0.AddCommandLine(args)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0.Build();\
+\'a0\'a0\'a0\'a0var clientIdGeneratorConfig = config.Get<MaConfig>();\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0...\
+\}\
+\'a0\
+public class MaConfig\
+\{\
+\'a0\'a0\'a0\'a0public string ClientId \{ get; set; \}\
+\'a0\'a0\'a0\'a0public string ClientSecret \{ get; set; \}\
+\'a0\'a0\'a0\'a0public string DisplayName \{ get; set; \}\
+\'a0\'a0\'a0\'a0public string RedirectUrl \{ get; set; \}\
+\'a0\'a0\'a0\'a0public string SqlConnectionString \{ get; set; \}\
+\}\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 \
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth8923\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8251\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\
+4\
+5\
+6\
+7\
+8\
+9\
+10\
+11\
+12\
+13\
+14\
+15\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 var inMemoryConfig = new Dictionary<string, string>\
+\{\
+\'a0\'a0\'a0\'a0\{"ConnectionStrings:DefaultConnection", connectionString\}\
+\};\
+var configuration = new ConfigurationBuilder()\
+\'a0\'a0\'a0\'a0\'a0.AddInMemoryCollection(inMemoryConfig)\
+\'a0\'a0\'a0\'a0\'a0.Build();\
+\'a0\
+\'a0var webHost = WebHost.CreateDefaultBuilder()\
+\'a0\'a0\'a0\'a0\'a0.UseStartup<StartupDeMonApi>()\
+\'a0\'a0\'a0\'a0\'a0.UseConfiguration(configuration)\
+\'a0\'a0\'a0\'a0\'a0.Build();\
+\'a0\
+\'a0// d\'e9marrage de l'API\
+\'a0await webHost.StartAsync();\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 \
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth8923\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8383\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 using (var serviceScope = webHost.Services.CreateScope())\
+\{\
+\}\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 \
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth8923\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8251\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\
+4\
+5\
+6\
+7\
+8\
+9\
+10\
+11\
+12\
+13\
+14\
+15\
+16\
+17\
+18\
+19\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 var manager = serviceScope.ServiceProvider\
+\'a0\'a0.GetRequiredService<\
+\'a0\'a0OpenIddictApplicationManager<OpenIddictApplication<long>>>();\
+\'a0\
+var descriptor = new OpenIddictApplicationDescriptor\
+\{\
+\'a0\'a0\'a0\'a0ClientId = myConfig.ClientId,\
+\'a0\'a0\'a0\'a0ClientSecret = myConfig.ClientSecret,\
+\'a0\'a0\'a0\'a0DisplayName = myConfig.DisplayName,\
+\'a0\'a0\'a0\'a0Permissions =\
+\'a0\'a0\'a0\'a0\{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0OpenIddictConstants.Permissions.Endpoints.Token,\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0OpenIddictConstants.Permissions.GrantTypes.Password,\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0OpenIddictConstants.Permissions.Scopes.Email,\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0OpenIddictConstants.Permissions.Scopes.Profile,\
+\'a0\'a0\'a0\'a0\}\
+\};\
+\'a0\
+await manager.CreateAsync(descriptor);\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 \
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth8781\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8535\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\
+4\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 --ClientId=Kikou\
+--ClientSecret=Lol\
+--DisplayName="Une application"\
+--SqlConnectionString="Server=tcp:deded;Initial Catalog=dev;Persist Security Info=False;User ID=inwink-sql-admin;Password=dededed;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;"\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 \'a0\
+\
+\
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth8923\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8383\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\
+4\
+5\
+6\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 GET /authorize?\
+\'a0\'a0\'a0\'a0response_type=code\
+\'a0\'a0\'a0\'a0&client_id=monClientId\
+\'a0\'a0\'a0\'a0&redirect_uri=https%3A%2F%2Furl.callback%2Fcb\
+\'a0\'a0\'a0\'a0&scope=openid%20profile\
+\'a0\'a0\'a0\'a0&state=kikouLolMdr\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 \
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth9064\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8524\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 In order to avoid these issues, Clients SHOULD NOT use the implicit\
+\'a0grant and any other response type causing the authorization server to\
+\'a0issue an access token in the authorization response.\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 \
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth8923\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8383\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\
+4\
+5\
+6\
+7\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 GET /authorize?\
+\'a0\'a0\'a0\'a0response_type=token\
+\'a0\'a0\'a0\'a0&client_id=monClientId\
+\'a0\'a0\'a0\'a0&redirect_uri=https%3A%2F%2Furl.callback%2Fcb\
+\'a0\'a0\'a0\'a0&scope=openid%20profile\
+\'a0\'a0\'a0\'a0&state=kikouLolMdr\
+\'a0\'a0Host: infinitesquare.com\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 \
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth8923\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8383\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\
+4\
+5\
+6\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 GET /authorize?\
+\'a0\'a0\'a0\'a0grant_type=password\
+\'a0\'a0\'a0\'a0&client_id=monClientId\
+\'a0\'a0\'a0\'a0&scope=openid%20profile\
+\'a0\'a0\'a0\'a0&username=jonathan\
+\'a0\'a0\'a0\'a0&password=motDePasse\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+
+\f1\b \cf0 \
+\pard\pardeftab708\ri-52\sl259\slmult1\sb40\partightenfactor0
+
+\f2\b0\fs24 \cf4 \
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+
+\f0\fs22 \cf0 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth9064\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8524\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\
+4\
+5\
+6\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 GET /authorize?\
+\'a0\'a0\'a0\'a0grant_type=client_credentials\
+\'a0\'a0\'a0\'a0&client_id=monClientId\
+\'a0\'a0\'a0\'a0&scope=openid%20profile\
+\'a0\'a0\'a0\'a0&client_id=jonathan\
+\'a0\'a0\'a0\'a0&client_secret=motDePasse\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+
+\f1\b \cf0 \
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+
+\f0\b0 \cf0 \
+\
+\
+\
+\
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth9064\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8392\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\
+4\
+5\
+6\
+7\
+8\
+9\
+10\
+11\
+12\
+13\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 services.AddOpenIddict()\
+.AddCore(\
+\'a0\'a0\'a0\'a0options =>\
+\'a0\'a0\'a0\'a0\{\
+\'a0\'a0\'a0\'a0\'a0// configuration du c\'9cur\
+\'a0\'a0\'a0\'a0\})\
+.AddServer(\
+\'a0\'a0\'a0\'a0options =>\
+\'a0\'a0\'a0\{\
+\'a0\'a0\'a0// autres configurations du serveur ici\
+\'a0\'a0\'a0var thumbprint = Configuration["OpenIdConnect:Thumbprint"];\
+\'a0\'a0\'a0\'a0\'a0options.AddSigningCertificate(thumbprint);\
+\'a0\'a0\'a0\'a0\});\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+
+\f1\b \cf0 \
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+
+\f0\b0 \cf0 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth9064\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8524\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\
+4\
+5\
+6\
+7\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 openssl \
+\'a0\'a0\'a0\'a0x509 \
+\'a0\'a0\'a0\'a0-noout \
+\'a0\'a0\'a0\'a0-fingerprint \
+\'a0\'a0\'a0\'a0-sha1 \
+\'a0\'a0\'a0\'a0-inform pem \
+\'a0\'a0\'a0\'a0-in votreCertificat.crt\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 \
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth8923\trftsWidth3 \trbrdrt\brdrs\brdrw15\brdrcf2 \trbrdrl\brdrs\brdrw15\brdrcf2 \trbrdrb\brdrs\brdrw15\brdrcf2 \trbrdrr\brdrs\brdrw15\brdrcf2 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth8383\clftsWidth3 \clbrdrt\brdrs\brdrw15\brdrcf2 \clbrdrl\brdrs\brdrw15\brdrcf2 \clbrdrb\brdrs\brdrw15\brdrcf2 \clbrdrr\brdrs\brdrw15\brdrcf2 \clpadt75 \clpadl75 \clpadb75 \clpadr75 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 1\
+2\
+3\
+4\
+5\
+6\cell 
+\pard\intbl\itap1\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 openssl \
+\'a0\'a0\'a0\'a0pkcs12 \
+\'a0\'a0\'a0\'a0-export \
+\'a0\'a0\'a0\'a0-out votreArchive.pfx \
+\'a0\'a0\'a0\'a0-inkey cotreClefPrivee.key \
+\'a0\'a0\'a0\'a0-in votreCertificat.crt\cell \lastrow\row
+\pard\pardeftab708\ri-52\sl259\slmult1\sa160\partightenfactor0
+\cf0 \
+}

@@ -1,0 +1,333 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fnil\fcharset0 Calibri;\f1\fnil\fcharset0 Calibri-Italic;\f2\fnil\fcharset0 Calibri-BoldItalic;
+\f3\fnil\fcharset0 Consolas;}
+{\colortbl;\red255\green255\blue255;\red166\green38\blue164;\red51\green51\blue51;\red56\green58\blue66;
+\red1\green132\blue188;\red193\green132\blue1;\red152\green104\blue1;\red80\green161\blue79;\red228\green86\blue73;
+\red160\green161\blue167;\red64\green120\blue242;\red68\green114\blue196;\red0\green0\blue255;\red0\green16\blue128;
+\red38\green127\blue153;\red163\green21\blue21;\red121\green94\blue38;\red0\green128\blue0;\red175\green0\blue219;
+\red128\green0\blue0;\red255\green0\blue0;\red9\green136\blue90;}
+{\*\expandedcolortbl;;\csgenericrgb\c65098\c14902\c64314;\csgenericrgb\c20000\c20000\c20000;\csgenericrgb\c21961\c22745\c25882;
+\csgenericrgb\c392\c51765\c73725;\csgenericrgb\c75686\c51765\c392;\csgenericrgb\c59608\c40784\c392;\csgenericrgb\c31373\c63137\c30980;\csgenericrgb\c89412\c33725\c28627;
+\csgenericrgb\c62745\c63137\c65490;\csgenericrgb\c25098\c47059\c94902;\csgenericrgb\c26667\c44706\c76863;\csgenericrgb\c0\c0\c100000;\csgenericrgb\c0\c6275\c50196;
+\csgenericrgb\c14902\c49804\c60000;\csgenericrgb\c63922\c8235\c8235;\csgenericrgb\c47451\c36863\c14902;\csgenericrgb\c0\c50196\c0;\csgenericrgb\c68627\c0\c85882;
+\csgenericrgb\c50196\c0\c0;\csgenericrgb\c100000\c0\c0;\csgenericrgb\c3529\c53333\c35294;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww19560\viewh17800\viewkind0
+\deftab708
+\pard\pardeftab708\ri-386\sl300\partightenfactor0
+
+\f0\fs16 \cf2 let\cf3  \cf4 data\cf5  :\cf3  \cf6 ExampleData\cf4  []\cf3  \cf5 =\cf3  \
+    \cf4 [\cf3 \
+      \cf4 \{\cf3 id\cf5  :\cf3  \cf7 1\cf4 ,\cf3  name\cf5  :\cf3  \cf8 "Dx Radio"\cf4 ,\cf3  status\cf5  :\cf3  \cf8 "todo"\cf4 ,\cf3  custom\cf5  :\cf3  \cf7 true\cf3 \}\cf4 ,\cf3 \
+      \cf4 \{\cf3 id\cf5  :\cf3  \cf7 2\cf4 ,\cf3  name\cf5  :\cf3  \cf8 "Dx datagrid"\cf4 ,\cf3  status\cf5  :\cf3  \cf8 "error"\cf4 ,\cf3  custom\cf5  :\cf3  \cf7 true\cf3 \}\cf4 ,\cf3 \
+      \cf4 \{\cf3 id\cf5  :\cf3  \cf7 3\cf4 ,\cf3  name\cf5  :\cf3  \cf8 "Dx popup"\cf4 ,\cf3  status\cf5  :\cf3  \cf8 "done"\cf4 ,\cf3  custom\cf5  :\cf3  \cf7 false\cf3 \}\cf4 ,\cf3 \
+      \cf4 \{\cf3 id\cf5  :\cf3  \cf7 4\cf4 ,\cf3  name \cf5 :\cf3  \cf8 "Dx button"\cf4 ,\cf3  status \cf5 :\cf3  \cf8 "warning"\cf4 ,\cf3  custom \cf5 :\cf3  \cf7 true\cf4 \},\cf3 \
+      \cf4 \{\cf3 id\cf5  :\cf3  \cf7 5\cf4 ,\cf3  name\cf5  :\cf3  \cf8 "Dx form"\cf4 ,\cf3  status\cf5  :\cf3  \cf8 "in progress"\cf4 ,\cf3  custom\cf5  :\cf3  \cf7 false\cf3 \}\cf4 ,\cf3 \
+      \cf4 \{\cf3 id\cf5  :\cf3  \cf7 6\cf4 ,\cf3  name\cf5  :\cf3  \cf8 "Dx Text"\cf4 ,\cf3  status\cf5  :\cf3  \cf8 "done"\cf4 ,\cf3  custom\cf5  :\cf3  \cf7 true\cf3 \}\
+    \cf4 ];\cf3 \
+\
+\
+\cf2 export\cf4  \cf2 class\cf4  \cf6 ExampleData\cf4  \{\cf3 \
+\pard\pardeftab708\ri-386\sl300\partightenfactor0
+\cf4     id\cf5 :\cf4  \cf5 number\cf4 ;\cf3 \
+\cf4     name\cf5 :\cf4  \cf5 string\cf4 ;\cf3 \
+\cf4     status\cf5 :\cf4  \cf5 string\cf4 ;\cf3 \
+\cf4     custom\cf5 :\cf4  \cf5 boolean\cf4 ;\cf3 \
+\cf4 \}\
+\
+\
+<\cf9 dx-button\cf4  \cf3 \
+\cf4     \cf7 type\cf4 =\cf8 "default"\cf3 \
+\cf4     \cf7 [disabled]\cf4 =\cf8 "data.value"\cf3 \
+\cf4     \cf7 text\cf4 =\cf8 "label of button"\uc0\u8232 \cf7     [visible]\cf4 =\cf8 "true"	\cf3 \
+\cf4     \cf7 (onClick)\cf4 =\cf8 "click($event, data)"\cf4 >\cf3 \
+\cf4 </\cf9 dx-button\cf4 >\cf3 \
+\
+\
+\'a0\'a0
+\f1\i \cf10 <!-- Pagination. -->
+\f0\i0 \cf3 \
+\'a0\'a0\cf4 <\cf9 dxo-paging\cf4  \cf7 [pageSize]\cf4 =\cf8 "3"\cf4  \cf7 [pageIndex]\cf4 =\cf8 "0"\cf4  \cf3 \
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf7 [enabled]\cf4 =\cf8 "true"\cf4 ></\cf9 dxo-paging\cf4 >\cf3 \
+\'a0\'a0\cf4 <\cf9 dxo-pager\cf4  \cf7 [allowedPageSizes]\cf4 =\cf8 "[3, 6, 10, 25]"\cf3 \
+\cf4 \'a0\'a0\'a0\'a0\cf7 [visible]\cf4 =\cf8 "false"\cf4 \'a0\cf7 [showPageSizeSelector]\cf4 =\cf8 "true"\cf4 \'a0\'a0\'a0\cf3 \
+\cf4 \'a0\'a0\'a0\'a0\cf7 [showNavigationButtons]\cf4 =\cf8 "true"\cf4  \cf7 [showInfo]\cf4 =\cf8 "true"\cf4 ></\cf9 dxo-pager\cf4 >\cf0 \
+\
+\
+\pard\pardeftab708\ri-386\sl300\partightenfactor0
+\cf3 \'a0\'a0
+\f1\i \cf10 <!-- Columns -->
+\f0\i0 \cf3 \
+\'a0\'a0\cf4 <\cf9 dxi-column\cf4  \cf7 dataField\cf4 =\cf8 "id"\cf4  \cf7 caption\cf4 =\cf8 "ID#"\cf4  \cf7 [visible]\cf4 =\cf8 "true"\cf3 \
+\pard\pardeftab708\ri-386\sl300\partightenfactor0
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf7 width\cf4 =\cf8 "50"\cf4  \cf7 alignment\cf4 =\cf8 "center"\cf4 ></\cf9 dxi-column\cf4 >\cf3 \
+\'a0\'a0\cf4 <\cf9 dxi-column\cf4  \cf7 dataField\cf4 =\cf8 "name"\cf4  \cf7 caption\cf4 =\cf8 "Name"\cf4  \cf7 [visible]\cf4 =\cf8 "true"\cf3 \
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf7 width\cf4 =\cf8 "150"\cf4 ></\cf9 dxi-column\cf4 >\cf3 \
+\'a0\'a0\cf4 <\cf9 dxi-column\cf4  \cf7 dataField\cf4 =\cf8 "status"\cf4  \cf7 caption\cf4 =\cf8 "Status"\cf4  \cf7 [visible]\cf4 =\cf8 "true"\cf3 \
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf7 width\cf4 =\cf8 "100"\cf4  \cf7 alignment\cf4 =\cf8 "center"\cf4 ></\cf9 dxi-column\cf4 >\cf3 \
+\'a0\'a0\cf4 <\cf9 dxi-column\cf4  \cf7 dataField\cf4 =\cf8 "custom"\cf4  \cf7 caption\cf4 =\cf8 "Custom"\cf3 \
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf7 cellTemplate\cf4 =\cf8 "cellTemplate"\cf4  \cf7 [allowFiltering]\cf4 =\cf8 "false"\cf3 \
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf7 [allowSorting]\cf4 =\cf8 "false"\cf4  \cf7 alignment\cf4 =\cf8 "center"\cf3 \
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf7 width\cf4 =\cf8 "150"\cf4 ></\cf9 dxi-column\cf4 >\cf3 \
+\
+\
+\cf4 <\cf9 div\cf4  \cf7 *dxTemplate\cf4 =\cf8 "let data of 'cellTemplate'"\cf4 >\cf3 \
+\'a0\'a0\'a0\'a0
+\f1\i \cf10 <!-- In the last column of the datagrid we add an action button -->
+\f0\i0 \cf3 \
+\'a0\'a0\'a0\'a0\cf4 <\cf9 dx-button\cf4  \cf7 type\cf4 =\cf8 "default"\cf4  \cf7 [disabled]\cf4 =\cf8 "data?.value"\cf4  \uc0\u8232 \cf7                          text\cf4 =\cf8 "label of button"\cf4 \'a0\cf7 (onClick)\cf4 =\cf8 "click($event, data)"\cf4 >\uc0\u8232     </\cf9 dx-button\cf4 >\cf3 \
+\'a0\'a0\cf4 </\cf9 div\cf4 >\cf3 \
+\'a0\
+\cf4 </\cf9 dx-data-grid\cf4 >\cf3 \
+\
+\
+\pard\pardeftab708\ri-386\sl300\partightenfactor0
+
+\f1\i \cf10 // DxButton widget with composant configuration in options 
+\f0\i0 \cf3 \
+\pard\pardeftab708\ri-386\sl300\partightenfactor0
+\cf2 public\cf4  \cf7 refreshBtnToolbar\cf5 :\cf4  \cf8 DxToolbarComponent\cf4 .\cf6 items\cf4  \cf5 =\cf4  \{\cf3 \
+\pard\pardeftab708\ri-386\sl300\partightenfactor0
+\cf4    \'a0\'a0\'a0\'a0\'a0location\cf5 :\cf4  \cf8 "after"\cf4 ,\cf3 \
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0widget\cf5 :\cf4  \cf8 "dxButton"\cf4 ,\cf3 \
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0locateInMenu\cf5 :\cf4  \cf8 "auto"\cf4 ,\cf3 \
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0options\cf5 :\cf4  \{\cf3 \
+\cf4               icon\cf5 :\cf4  \cf8 "pulldown"\cf4 ,\cf3 \
+\cf4               hint\cf5 :\cf4  \cf8 "Clear & Reload"\cf4 ,\cf3 \
+\cf4               \cf11 onClick\cf5 :\cf4  (e\cf5 :\cf4  \cf6 Event\cf4 )\cf5 :\cf4  \cf5 void\cf4  \cf2 =>\cf4  \cf9 this\cf4 .\cf11 ClearRefreshAction\cf4 (e)\cf3 \
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\}\cf3 \
+\cf4 \};\cf3 \
+\
+\
+\pard\pardeftab708\ri-386\sl300\partightenfactor0
+
+\f1\i \cf10 // Event DevExtreme during the datagrid\'92s toolbar building
+\f0\i0 \cf3 \
+\pard\pardeftab708\ri-386\sl259\slmult1\sa160\partightenfactor0
+\cf2 private\cf4  \cf11 toolbarPreparing\cf4 (event\cf5 :\cf4  \cf5 Event\cf4 ) \{\uc0\u8232 
+\f1\i \cf10     // we get back the list of DxToolbarComponent.items instance
+\f0\i0 \cf4 \uc0\u8232 \'a0\'a0\'a0\'a0\cf2 const\cf4  \cf7 toolbarItems\cf5 :\cf4  \cf8 DxToolbarComponent\cf4 .\cf6 items\cf4  \cf5 =\cf4 \'a0\cf9 event\cf4 .\cf9 toolbarOptions\cf4 .\cf9 items\cf4 ;\uc0\u8232 
+\f1\i \cf10      // jQuery typical form
+\f0\i0 \cf4 \uc0\u8232 
+\f1\i \cf10     // we add a DxButton widget in toolbar by passing a configuration object
+\f0\i0 \cf4 \uc0\u8232 \'a0\'a0\'a0\'a0\cf9 toolbarItemsref\cf4 .\cf11 push\cf4 (\cf5 this\cf4 .\cf9 reshBtnToolbar\cf4 );\uc0\u8232 \'a0\'a0\'a0\'a0
+\f1\i \cf10 // We can edit the properties them as we wish from the moment\uc0\u8232    // we get back the DxToolbarComponent.items instance\u8232 
+\f0\i0 \cf4 \'a0\'a0\'a0\'a0\cf9 toolbarItems\cf4 .\cf11 forEach\cf4 (\uc0\u8232 
+\f1\i \cf10       // for each toolbar item we change the location at \'ab\'a0before\'a0\'bb\uc0\u8232 
+\f0\i0 \cf4       (item\cf5 :\cf4  \cf8 DxToolbarComponent\cf4 .\cf6 items\cf4 )\cf5 :\cf4  \cf5 void\cf4  \cf2 =>\cf4  \{\uc0\u8232  \'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf9 item\cf4 .\cf9 location\cf4  \cf5 =\cf4  \cf8 "before"\cf4 ;\uc0\u8232 \'a0\'a0\'a0\'a0\'a0\'a0\});\u8232 \'a0\}\
+\
+\pard\pardeftab708\ri-386\sl300\partightenfactor0
+\cf4 @\cf11 ViewChild\cf4 (\cf8 "datagrid"\cf4 , \{ static\cf5 :\cf4  \cf7 false\cf4  \}) _datagrid\cf5 :\cf4  \cf6 DxDataGridComponent\cf4 ;\cf3 \
+\pard\pardeftab708\ri-386\sl300\sa160\partightenfactor0
+\cf2 \uc0\u8232   private\cf4  \cf11 ClearRefreshAction\cf4  (event\cf5 :\cf4  \cf5 Event\cf4 ) \{\
+\pard\pardeftab708\ri-386\sl300\partightenfactor0
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0
+\f1\i \cf10 // Notify
+\f0\i0 \cf11 \uc0\u8232          notify\cf4 (\{\cf3 \
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0message\cf5 :\cf4  \cf8 `Click on the toolbar button "Clear & Reload" triggered!`\cf4 ,\cf3 \
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0type\cf5 :\cf4  \cf8 "success"\cf4 ,\cf3 \
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0position\cf5 :\cf4  \{\'a0at\cf5 :\cf4  \cf8 "center"\cf4 ,\'a0my\cf5 :\cf4  \cf8 "center"\cf4 , \'a0offset\cf5 :\cf4  \cf8 "0 52"\cf4 \'a0\},\cf3 \
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0width\cf5 :\cf4  \cf7 250\cf4 ,\'a0\'a0duration\cf5 :\cf4  \cf7 500\cf3 \
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\});\cf3 \
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0
+\f1\i \cf10 // Event Clear filter action
+\f0\i0 \cf3 \
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf9 this\cf4 .\cf9 _datagrid\cf4 .\cf9 instance\cf4 .\cf11 clearFilter\cf4 ();\cf3 \
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0
+\f1\i \cf10 // Reload Datagrid
+\f0\i0 \cf3 \
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf9 this\cf4 .\cf9 _datagrid\cf4 .\cf9 dataSource\cf4  \cf5 =\cf4  \cf9 this\cf4 .\cf9 dataSource\cf4 ;\cf3 \
+\cf4 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf9 this\cf4 .\cf9 _datagrid\cf4 .\cf9 instance\cf4 .\cf11 getDataSource\cf4 ().\cf11 reload\cf4 ();\
+  \}\
+\
+\
+\pard\pardeftab708\ri-386\sl300\sa160\partightenfactor0
+\cf4 <\cf9 dx-popup\uc0\u8232 \cf4 \'a0\'a0\cf7 [width]\cf4 =\cf8 "260"\cf4 \'a0\'a0\cf7 [height]\cf4 =\cf8 "240"\cf4 \'a0\'a0\cf7 [showTitle]\cf4 =\cf8 "true"\cf4 \'a0\'a0\cf7 [title]\cf4 =\cf8 "currentRow.name"\uc0\u8232 \cf4 \'a0\'a0\cf7 [dragEnabled]\cf4 =\cf8 "false"\cf4 \'a0\'a0\cf7 [closeOnOutsideClick]\cf4 =\cf8 "true"\cf4 \'a0\'a0\cf7 [(visible)]\cf4 =\cf8 "popupVisible"\uc0\u8232 \cf4 \'a0\'a0\cf7 (onShown)\cf4 =\cf8 "
+\f2\i\b \cf12 \ul \ulc12 shown($event)
+\f0\i0\b0 \cf8 \ulnone "\cf4 >\cf3 \
+\pard\pardeftab708\ri-386\sl300\partightenfactor0
+\cf3 \'a0\'a0\cf4 <\cf9 div\cf4  \cf7 *dxTemplate\cf4 =\cf8 "let data of 'content'"\cf4 >\cf3 \
+\'a0\'a0\'a0\'a0\cf4 <\cf9 div\cf4 \'a0\cf7 class\cf4 =\cf8 "popup-property-details"\cf4 >\uc0\u8232 \cf3 \'a0\'a0\'a0\'a0\'a0\'a0\cf4 <\cf9 pre\cf4 >\cf3 \{\{ currentRow | json \}\}\cf4 </\cf9 pre\cf4 >\cf3 \
+\'a0\'a0\'a0\'a0\cf4 </\cf9 div\cf4 >\cf3 \
+\'a0\'a0\cf4 </\cf9 div\cf4 >\cf3 \
+\pard\pardeftab708\ri-386\sl300\partightenfactor0
+\cf4 </\cf9 dx-popup\cf4 >\
+\
+\
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+
+\f3\fs18 \cf13 Let \cf14 db\cf0 \'a0=\'a0\cf13 new\cf0 \'a0\cf15 sqlite3\cf0 .\cf15 Database\cf0 (\cf16 'exampleData.db'\cf0 );\
+\cf13 let\cf0 \'a0\cf14 restapi\cf0 \'a0=\'a0\cf17 express\cf0 ();\
+\
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf18 // Configure express server \
+// And Creation DB with data\cf0 \
+\cf18 [ \'85 ]\
+\
+//#region\'a0API\'a0|\'a0CRUD\'a0Actions\cf0 \
+\cf18 /**\'a0CREATE\'a0*/\cf0 \
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf14 restapi\cf0 .\cf17 post\cf0 (\cf16 "/add"\cf0 ,\'a0(\cf14 req\cf0 ,\'a0\cf14 res\cf0 )\'a0\cf13 =>\cf0 \'a0\{ \'85 \});\
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf18 /**\'a0READ\'a0*/\cf0 \
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf14 restapi\cf0 .\cf17 get\cf0 (\cf16 '/all'\cf0 ,\'a0(\cf14 req\cf0 ,\'a0\cf14 res\cf0 )\'a0\cf13 =>\cf0 \'a0\{ \'85 \});\
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf18 /**\'a0UPDATE\'a0*/\cf0 \
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf14 restapi\cf0 .\cf17 put\cf0 (\cf16 "/upd/:id"\cf0 ,\'a0(\cf14 req\cf0 ,\'a0\cf14 res\cf0 )\'a0\cf13 =>\cf0 \'a0\{ \'85 \});\
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf18 /**\'a0Delete\'a0*/\cf0 \
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf14 restapi\cf0 .\cf17 delete\cf0 (\cf16 "/del/:id"\cf0 ,\'a0(\cf14 req\cf0 ,\'a0\cf14 res\cf0 )\'a0\cf13 =>\cf0 \'a0\{\
+\'a0\'a0\cf13 const\cf0 \'a0\cf14 itemId\cf0 \'a0=\'a0\cf14 req\cf0 .\cf14 params\cf0 .\cf14 id\cf0 ;\
+\'a0\'a0\cf15 console\cf0 .\cf17 log\cf0 (\cf16 "Delete\'a0item\'a0with\'a0id:\'a0"\cf0 ,\'a0\cf14 itemId\cf0 );\
+\'a0\'a0\cf18 //\'a0Delete\'a0item\cf0 \
+\'a0\'a0\cf14 db\cf0 .\cf17 run\cf0 (\cf16 'DELETE\'a0FROM\'a0exampleData\'a0WHERE\'a0id\'a0=\'a0$id'\cf0 ,\'a0\{ \cf14 $id:\cf0 \'a0\cf14 itemId\cf0 \'a0\});\
+\});\
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf18 //#endregion\'a0API\'a0|\'a0CRUD\'a0Actions\cf0 \
+\
+\
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+
+\f0\fs20 \cf18 \
+// URL of express server\
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf13 let\cf0 \'a0\cf14 url\cf0 :\'a0\cf15 string\cf0 \'a0=\'a0\cf16 `http://localhost:3000/`\cf0 ;\
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf18 \
+//#region\'a0DataSource\'a0|\'a0CRUD\'a0Actions\cf0 \
+\cf18 //\'a0Define\'a0CustomStoreOptions\cf0 \
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf13 let \cf14 customStoreOpt\'a0: \cf15 CustomStoreOptions =\cf13  new\cf0 \'a0\cf15 CustomStoreOptions\cf0 (\{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf14 key:\cf0 \'a0\cf16 "id"\cf0 ,\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf17 load\cf14 :\cf0 \'a0()\'a0\cf13 =>\cf0 \'a0\cf13 this\cf0 .\cf17 sendRequest\cf0 (\cf16 `\cf13 $\{\cf14 url\cf13 \}\cf16 all`\cf0 ),\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf17 insert\cf14 :\cf0 \'a0\cf14 values\cf0 \'a0\cf13 =>\cf0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf13 this\cf0 .\cf17 sendRequest\cf0 (\cf16 `\cf13 $\{\cf14 url\cf13 \}\cf16 add`\cf0 ,\'a0\cf16 "POST"\cf0 ,\'a0\cf14 values\cf0 ),\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf17 update\cf14 :\cf0 \'a0(\cf14 key\cf0 ,\'a0\cf14 values\cf0 )\'a0\cf13 =>\cf0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf13 this\cf0 .\cf17 sendRequest\cf0 (\cf16 `\cf13 $\{\cf14 url\cf13 \}\cf16 upd/\cf13 $\{\cf14 key\cf13 \}\cf16 `\cf0 ,\'a0\cf16 "PUT"\cf0 ,\'a0\cf14 values\cf0 ),\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf17 remove\cf14 :\cf0 \'a0\cf14 key\cf0 \'a0\cf13 =>\cf0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf13 this\cf0 .\cf17 sendRequest\cf0 (\cf16 `\cf13 $\{\cf14 url\cf13 \}\cf16 del/\cf13 $\{\cf14 key\cf13 \}\cf16 `\cf0 ,\'a0\cf16 "DELETE"\cf0 ,\'a0\{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf14 key:\cf0 \'a0\cf14 key\cf0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\})\
+\});\
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf18 //\'a0Define\'a0DataSource\cf0 \
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf13 this\cf0 .\cf14 dataSource\cf0 \'a0=\'a0\cf13 new\cf0 \'a0\cf15 DataSource\cf0 (customStoreOpt);\
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf18 //#endregion\'a0CustomStoreOptions\'a0|\'a0CRUD\'a0Actions\
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf0 \
+\
+\
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf18   /**\
+   * Send Request\
+   * @param url \
+   * @param method \
+   * @param httpParams \
+   */\cf0 \'a0\
+\'a0\cf13 public\cf0 \'a0\cf17 sendRequest\cf0 (\cf14 url\cf0 :\'a0\cf15 string\cf0 ,\'a0\cf14 method\cf0 :\'a0\cf15 string\cf0 \'a0=\'a0\cf16 "GET"\cf0 ,\'a0\cf14 httpParams\cf0 :\'a0\cf15 any\cf0 \'a0=\'a0\{\}):\'a0\cf15 any\cf0 \'a0\{\
+\'a0\'a0\'a0\'a0\cf13 let\cf0 \'a0\cf14 httpOptions\cf0 \'a0=\'a0\{\'a0\cf14 withCredentials:\cf0 \'a0\cf13 false\cf0 ,\'a0\cf14 body:\cf0 \'a0\cf14 httpParams\cf0 \'a0\};\
+\'a0\'a0\'a0\'a0\cf13 let\cf0 \'a0\cf14 result\cf0 ;\
+\'a0\'a0\'a0\'a0\cf19 switch\cf0 \'a0(\cf14 method\cf0 )\'a0\{\
+\'a0\'a0\'a0\'a0\'a0\'a0\cf19 case\cf0 \'a0\cf16 "GET"\cf0 :\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf14 result\cf0 \'a0=\'a0\cf13 this\cf0 .\cf14 http\cf0 .\cf17 get\cf0 (\cf14 url\cf0 ,\'a0\cf14 httpOptions\cf0 );\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf19 break\cf0 ;\
+\'a0\'a0\'a0\'a0\'a0\'a0\cf19 case\cf0 \'a0\cf16 "PUT"\cf0 :\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf14 result\cf0 \'a0=\'a0\cf13 this\cf0 .\cf14 http\cf0 .\cf17 put\cf0 (\cf14 url\cf0 ,\'a0\cf14 httpParams\cf0 ,\'a0\cf14 httpOptions\cf0 );\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf19 break\cf0 ;\
+\'a0\'a0\'a0\'a0\'a0\'a0\cf19 case\cf0 \'a0\cf16 "POST"\cf0 :\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf14 result\cf0 \'a0=\'a0\cf13 this\cf0 .\cf14 http\cf0 .\cf17 post\cf0 (\cf14 url\cf0 ,\'a0\cf14 httpParams\cf0 ,\'a0\cf14 httpOptions\cf0 );\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf19 break\cf0 ;\
+\'a0\'a0\'a0\'a0\'a0\'a0\cf19 case\cf0 \'a0\cf16 "DELETE"\cf0 :\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf14 result\cf0 \'a0=\'a0\cf13 this\cf0 .\cf14 http\cf0 .\cf17 delete\cf0 (\cf14 url\cf0 ,\'a0\cf14 httpOptions\cf0 );\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf19 break\cf0 ;\
+\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0\cf19 return\cf0 \'a0\cf14 result\cf0 .\cf17 toPromise\cf0 ().\cf17 then\cf0 ((\cf14 result\cf0 :\'a0\cf15 any\cf0 )\'a0\cf13 =>\cf0 \'a0\{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf19 return\cf0 \'a0 (\cf14 method\cf0 \'a0===\'a0\cf16 "GET"\cf0 )\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0? \{\'a0\cf14 data:\cf0 \'a0\cf14 result\cf0 .\cf14 exampleData\cf0 ,\'a0\cf14 totalCount:\cf0 \'a0\cf14 result\cf0 .\cf14 totalCount \cf0 \};\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0  \cf19 :  \cf14 result\cf0 ;\
+\'a0\'a0\'a0\'a0\'a0\'a0\}).\cf17 catch\cf0 (\cf14 e\cf0 \'a0\cf13 =>\cf0 \'a0\{\'a0\cf19 throw\cf0 \'a0\cf14 e\cf0 \'a0&&\'a0\cf14 e\cf0 .\cf14 error\cf0 \'a0&&\'a0\cf14 e\cf0 .\cf14 error\cf0 .\cf14 Message\cf0 ;\'a0\});\
+\'a0\'a0\}\cf18 \
+\
+\
+<!\'97Editing\'a0-->\cf0 \
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf20 <dxo-editing\cf0 \'a0\
+\'a0\'a0\'a0\'a0\'a0\'a0\cf21 mode\cf0 =\cf13 "cell"\cf0 \'a0\
+\'a0\'a0\'a0\'a0\'a0\'a0\cf21  [allowAdding]\cf0 =\cf13 "true"\cf0 \'a0\
+\'a0\'a0\'a0\'a0\'a0\'a0\cf21  [allowUpdating]\cf0 =\cf13 "true"\cf0 \'a0\
+\'a0\'a0\'a0\'a0\'a0\'a0\cf21  [allowDeleting]\cf0 =\cf13 "true"\
+\cf20 ></dxo-editing>\cf0 \
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf18 <!--\'a0Columns\'a0-->\cf0 \
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf20 <dxi-column\cf0 \'a0\cf21 dataField\cf0 =\cf13 "id"\cf0 \'a0\cf21 [allowEditing]\cf0 =\cf13 "false"\cf0 \'a0\cf21 caption\cf0 =\cf13 "ID#"\cf0 \'a0\
+\'a0\'a0\'a0\'a0\'a0\'a0\cf21  [visible]\cf0 =\cf13 "true"\cf0 \'a0\cf21 width\cf0 =\cf13 "50"\cf0 \'a0\cf21 alignment\cf0 =\cf13 "center"\cf20 >\cf0 \
+\cf20 </dxi-column>\cf0 \
+\cf20 <dxi-column\cf0 \'a0\cf21 dataField\cf0 =\cf13 "name"\cf0 \'a0\cf21 caption\cf0 =\cf13 "Name"\cf0 \'a0\
+\'a0\'a0\'a0\'a0\'a0\'a0\cf21  [visible]\cf0 =\cf13 "true"\cf0 \'a0\cf21 width\cf0 =\cf13 "150"\cf20 >\
+</dxi-column>\cf0 \
+\cf20 <dxi-column\cf0 \'a0\cf21 dataField\cf0 =\cf13 "status"\cf0 \'a0\cf21 caption\cf0 =\cf13 "Status"\cf0 \'a0\
+\'a0\'a0\'a0\'a0\'a0\'a0\cf21  [visible]\cf0 =\cf13 "true"\cf0 \'a0\cf21 width\cf0 =\cf13 "100"\cf0 \'a0\cf21 alignment\cf0 =\cf13 "center"\cf20 >\
+</dxi-column>\cf0 \
+\cf20 <dxi-column\cf0 \'a0\cf21 dataField\cf0 =\cf13 "custom"\cf0 \'a0\cf21 [allowEditing]\cf0 =\cf13 "false"\cf0 \'a0\cf21 caption\cf0 =\cf13 "Custom"\cf0 \'a0\
+\'a0\'a0\'a0\'a0\'a0\'a0\cf21 cellTemplate\cf0 =\cf13 "cellTemplate" \cf21 [allowFiltering]\cf0 =\cf13 "false"\cf0 \'a0\cf21 [allowSorting]\cf0 =\cf13 "false"\cf0 \'a0\
+\'a0\'a0\'a0\'a0\'a0\'a0\cf21 alignment\cf0 =\cf13 "center"\cf0 \'a0\cf21 width\cf0 =\cf13 "150"\cf20 >	\
+</dxi-column>\cf0 \
+\
+\
+\'a0\cf18 //\'a0DxButton\'a0widget\'a0with\'a0composant\'a0configuration\'a0in\'a0options\cf0 \
+\'a0\'a0\cf13 public\cf0 \'a0\cf14 deleteRowBtnToolbar\cf0 :\'a0\cf15 DxToolbarComponent\cf0 [\cf16 "items"\cf0 ]\'a0=\'a0\{\
+\'a0\'a0\'a0\'a0\cf14 location:\cf0 \'a0\cf16 "after"\cf0 ,\
+\'a0\'a0\'a0\'a0\cf14 widget:\cf0 \'a0\cf16 "dxButton"\cf0 ,\
+\'a0\'a0\'a0\'a0\cf14 locateInMenu:\cf0 \'a0\cf16 "auto"\cf0 ,\
+\'a0\'a0\'a0\'a0\cf14 options:\cf0 \'a0\{\
+\'a0\'a0\'a0\'a0\'a0\'a0\cf14 disabled:\cf0 \'a0!\cf13 this\cf0 .\cf14 deleteBtnValid\cf0 ,\
+\'a0\'a0\'a0\'a0\'a0\'a0\cf14 icon:\cf0 \'a0\cf16 "trash"\cf0 ,\
+\'a0\'a0\'a0\'a0\'a0\'a0\cf14 hint:\cf0 \'a0\cf16 "Delete\'a0Selected\'a0Rows"\cf0 ,\
+\'a0\'a0\'a0\'a0\'a0\'a0\cf17 onInitialized\cf14 :\cf0 \'a0(\cf14 args\cf0 :\'a0\cf15 any\cf0 )\'a0\cf13 =>\cf0 \'a0\{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf18 //\'a0We\'a0
+\fs22 \cf0  
+\fs20 \cf18 recover the\'a0instance\'a0of\'a0DxButton\cf0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf13 this\cf0 .\cf14 deleteBtnToolbarInstance\cf0 \'a0=\'a0\cf14 args\cf0 .\cf14 component\cf0 ;\
+\'a0\'a0\'a0\'a0\'a0\'a0\},\
+\'a0\'a0\'a0\'a0\'a0\'a0\cf17 onClick\cf14 :\cf0 \'a0(\cf14 e\cf0 :\'a0\cf15 Event\cf0 ):\'a0\cf15 void\cf0 \'a0\cf13 =>\cf0 \'a0\cf13 this\cf0 .\cf17 deletedSelectedRow\cf0 (\cf14 e\cf0 )\
+\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\};\
+\
+\
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf18 /**\
+  * Delected Selected Rows\
+  */\cf0 \
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf13 private\cf0 \'a0\cf17 deletedSelectedRow\cf0 (\cf14 event\cf0 :\'a0\cf15 Event\cf0 )\'a0\{\
+\'a0\'a0\'a0\'a0\cf13 let\cf0 \'a0\cf14 promiseList\cf0 :\'a0\cf15 Array\cf0 <\cf15 any\cf0 >\'a0=\'a0[];\
+\'a0\'a0\'a0\'a0\cf13 let\cf0 \'a0\cf14 rows\cf0 :\'a0\cf15 Array\cf0 <\cf15 ExampleData\cf0 >\'a0=\'a0\cf13 this\cf0 .\cf14 _datagrid\cf0 .\cf14 instance\cf0 .\cf17 getSelectedRowsData\cf0 ();\uc0\u8232 \cf18      //\'a01 - for each row selected\cf0 \
+\'a0\'a0\'a0\'a0\cf14 rows\cf0 .\cf17 forEach\cf0 (\cf14 row\cf0 \'a0\cf13 =>\cf0 \'a0\{\uc0\u8232 \cf18       // 2 - we add a promise for every call to our API  \cf0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\cf14 promiseList\cf0 .\cf17 push\cf0 (\cf13 this\cf0 .\cf17 sendRequest\cf0 (\cf16 `\cf13 $\{this.\cf14 url\cf13 \}\cf16 del/\cf13 $\{\cf14 row\cf0 .\cf14 id\cf13 \}\cf16 `\cf0 ,\'a0\cf16 "DELETE"\cf0 ,\'a0\{\'a0\cf14 key:\cf0 \'a0\cf14 row\cf0 .\cf14 id\cf0 \'a0\}));\
+\'a0\'a0\'a0\'a0\});\
+\'a0\'a0\'a0\'a0\cf15 Promise\cf0 .\cf17 all\cf0 (\cf14 promiseList\cf0 ).\cf17 then\cf0 (\cf14 values\cf0 \'a0\cf13 =>\cf0 \'a0\{\
+\pard\pardeftab708\ri-386\sl285\partightenfactor0
+\cf18       // 3 - we send a notification after the good progress of our actions of suppression. \cf0 \
+\cf18       \cf13 const\cf0 \'a0\cf14 type\cf0 \'a0=\'a0\cf16 "success"\cf0 ;\
+\cf18       \cf13 this\cf0 .\cf14 _notifyConfig\cf0 .\cf14 message\cf0 \'a0=\'a0\cf16 "All\'a0selected\'a0rows\'a0deleted!"\cf0 ;\
+\cf18       \cf17 notify\cf0 (\cf13 this\cf0 .\cf14 _notifyConfig\cf0 ,\'a0\cf14 type\cf0 ,\'a0\cf22 1500\cf0 );\
+\cf18       // 4 - we deselect the selected rows\
+      \cf13 this\cf0 .\cf14 _datagrid\cf0 .\cf14 instance\cf0 .\cf17 clearSelection\cf0 ();\uc0\u8232 \cf18       // 5 - we pass the button status to false in order to disable delete button\cf0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\cf13 this\cf0 .\cf14 deleteBtnValid\cf0 \'a0=\'a0\cf13 false\cf0 ;\
+\'a0\'a0\'a0\'a0\'a0\'a0\cf19 if\cf0 \'a0(\cf13 this\cf0 .\cf14 deleteBtnToolbarInstance\cf0 \'a0!==\'a0\cf13 null\cf0 )\'a0\{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf13 this\cf0 .\cf14 deleteBtnToolbarInstance\cf0 .\cf17 option\cf0 (\{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf14 disabled:\cf0 \'a0!\cf13 this\cf0 .\cf14 deleteBtnValid\cf0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\});\
+\'a0\'a0\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0\'a0\'a0\cf18 //\'a06 - we reload\'a0the Datagrid\cf0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\cf13 this\cf0 .\cf14 _datagrid\cf0 .\cf14 instance\cf0 .\cf17 getDataSource\cf0 ().\cf17 reload\cf0 ();\
+\'a0\'a0\'a0\'a0\});\
+\'a0\'a0\}\
+\
+\
+}
